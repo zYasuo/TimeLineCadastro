@@ -1,17 +1,81 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap');
 
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #F4F8FB;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #64ace7;
     padding: 20px;
+    line-height: 50px;
+}
+
+.title-h2 {
+    text-align: center;
+    font-weight: 700;
+    color: #fff;
+    margin-top: 4em;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;  
+    background-color: #0056b3; 
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 0 20px;
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+#logo-container {
+    flex-grow: 1;
+}
+
+#logo {
+    margin-top: 0.8em;
+    height: 40px; 
+}
+
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;  
+    background-color: #0056b3; 
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 0 20px;
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4em;
 }
 
 form {
+    width: 60%;
+    height: auto;
     background-color: #fff;
-    padding: 20px;
+    padding: 3em;
     border-radius: 5px;
-    box-shadow: 0px 0px 10px #ccc;
+    box-shadow: 19px 23px 5px 0px rgba(0,123,255,0.34);
+    -webkit-box-shadow: 19px 23px 5px 0px rgba(0,123,255,0.34);
+    -moz-box-shadow: 19px 23px 5px 0px rgba(0,123,255,0.34);
+}
+
+h2 {
+    font-size: 1.3em;
+    font-weight: 700;
 }
 .timeline {
     position: relative;
@@ -33,6 +97,22 @@ form {
     transition: width 0.3s ease-in-out;
 }
 
+.step {
+    transition: all 0.3s ease;
+}
+
+.step.current {
+    background-color: #007bff; /* Altere para a cor que você quiser para o passo atual */
+}
+
+.step.completed-step {
+    background-color: #007bff;
+}
+
+.step.highlight {
+    background-color: #007bff; 
+    transform: scale(1.4);
+}
 .timeline .step {
     display: inline-block;
     width: 30px;
@@ -159,6 +239,10 @@ input[type="radio"] {
     display: none;
 }
 
+.tipo_cliente {
+    width: 40%;
+}
+
 label[for="zona-rural"],
 label[for="zona-urbana"] {
     display: inline-block;
@@ -167,6 +251,8 @@ label[for="zona-urbana"] {
     border: 1px solid #ccc;
     border-radius: 5px;
     cursor: pointer;
+    width: 39%;
+    padding: 0;
 }
 
 input[type="radio"]:checked + label {
@@ -182,7 +268,8 @@ input[type="radio"]:checked + label {
 label[for="zona-rural"], label[for="zona-urbana"] {
   display: inline-block;
   margin-right: 10px;
-  padding: 10px;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
   border: 1px solid #ccc;
   border-radius: 5px;
   cursor: pointer;
@@ -202,4 +289,38 @@ button[type="submit"] {
     background-color: #28a745;
     color: #fff;
 }
+.bar {
+    background: grey;
+    height: 5px;
+    width: 100%;
+    position: relative;
+}
 
+.bar-filled {
+    background: #007bff;
+    height: 100%;
+    width: 0;
+    position: absolute;
+    transition: width 0.3s ease-in-out;
+}
+.step.completed {
+    background: #007bff;
+    color: white;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.form-part {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+#arquivo {
+    width: 40%;
+}
